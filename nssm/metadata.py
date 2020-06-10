@@ -8,10 +8,10 @@
 """
 
 # The package name, which is also the "UNIX name" for the project.
-package = 'pynssm'
+package = 'lime-pynssm'
 project = "PyNSSM"
 project_no_spaces = project.replace(' ', '')
-version = '2.24.2-alpha.1'
+version = '3.0.0'
 description = "Python wrapper for NSSM - the Non-Sucking Service Manager (nssm.cc)"  # NOQA
 authors = ['Lorenzo Delgado']
 authors_string = ', '.join(authors)
