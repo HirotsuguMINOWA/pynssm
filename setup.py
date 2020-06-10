@@ -259,35 +259,12 @@ with open("README.md", "r") as fh:
 # See here for more options:
 # <http://pythonhosted.org/setuptools/setuptools.html>
 setup_dict = dict(
-    name=metadata.package,
+    name='lime-pynssm',
     version=metadata.version,
-    author=metadata.authors[0],
-    author_email=metadata.emails[0],
-    maintainer=metadata.authors[0],
-    maintainer_email=metadata.emails[0],
-    url=metadata.url,
-    download_url=metadata.download_url,
+    url='https://www.github.com/Lundalogik/lime-pynssm',
     description=metadata.description,
-    long_description=long_description,
-    long_description_content_type="text/markdown",
     # Find a list of classifiers here:
     # <http://pypi.python.org/pypi?%3Aaction=list_classifiers>
-    classifiers=[
-        'Development Status :: 1 - Planning',
-        'Environment :: Console',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: Implementation :: PyPy',
-        'Topic :: Documentation',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: System :: Installation/Setup',
-        'Topic :: System :: Software Distribution',
-    ],
     packages=find_packages(exclude=(TESTS_DIRECTORY,)),
     install_requires=get_package_dependencies(),
     include_package_data=True,
