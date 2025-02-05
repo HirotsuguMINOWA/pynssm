@@ -3,7 +3,6 @@ from __future__ import print_function
 
 import os
 import sys
-import imp
 import subprocess
 
 # Python 2.6 subprocess.check_output compatibility. Thanks Greg Hewgill!
@@ -51,9 +50,16 @@ PYTEST_FLAGS = ['--doctest-modules']
 # instead, effectively side-stepping the dependency problem. Please make sure
 # metadata has no dependencies, otherwise they will need to be added to
 # the setup_requires keyword.
-metadata = imp.load_source(
-    'metadata', os.path.join(CODE_DIRECTORY, 'metadata.py'))
+# metadata = imp.load_source(
+#     'metadata', os.path.join(CODE_DIRECTORY, 'metadata.py'))
+import importlib.util
+import os
 
+metadata_path = os.path.join(CODE_DIRECTORY, 'metadata.py')
+
+spec = importlib.util.spec_from_file_location("metadata", metadata_path)
+metadata = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(metadata)
 
 # Miscellaneous helper functions
 
